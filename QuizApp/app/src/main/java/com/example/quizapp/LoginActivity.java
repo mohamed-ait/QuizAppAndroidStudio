@@ -7,6 +7,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class LoginActivity extends AppCompatActivity {
@@ -17,14 +18,16 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.hide();
         username = (EditText) findViewById(R.id.username);
         password = (EditText) findViewById(R.id.password);
         btnlogin = (Button) findViewById(R.id.loginbtn);
         DB = new DBHelper(this);
+        DB.insertUser("med","med123","student");
         btnlogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 String user = username.getText().toString();
                 String pass = password.getText().toString();
 

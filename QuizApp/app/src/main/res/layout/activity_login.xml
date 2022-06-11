@@ -43,7 +43,7 @@
         android:textColorHint="@color/black" />
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/password"
         android:layout_width="910px"
         android:layout_height="85dp"
         android:layout_below="@id/username"
@@ -65,7 +65,7 @@
         android:id="@+id/loginbtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/editText"
+        android:layout_below="@id/password"
         android:layout_centerHorizontal="true"
         android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"

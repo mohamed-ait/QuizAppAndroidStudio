@@ -1,44 +1,30 @@
 package com.example.quizapp;
 
-import androidx.appcompat.app.AppCompatActivity;
-
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 
-public class LoginActivity extends AppCompatActivity {
-    EditText username, password;
-    Button btnlogin;
-    DBHelper DB;
+import androidx.appcompat.app.AppCompatActivity;
+
+
+public class MainActivity extends AppCompatActivity {
+    Button btn;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
-        username = (EditText) findViewById(R.id.username);
-        password = (EditText) findViewById(R.id.password);
-        btnlogin = (Button) findViewById(R.id.loginbtn);
-        DB = new DBHelper(this);
-        btnlogin.setOnClickListener(new View.OnClickListener() {
+        setContentView(R.layout.activity_main);
+        btn=(Button) findViewById(R.id.login);
+        btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                String user = username.getText().toString();
-                String pass = password.getText().toString();
-
-                if(user.equals("")||pass.equals(""))
-                    Toast.makeText(LoginActivity.this, "Please enter all the fields", Toast.LENGTH_SHORT).show();
-                else{
-                    Boolean checkuserpass = DB.checkusernamepassword(user, pass);
-                    if(checkuserpass==true){
-                        Toast.makeText(LoginActivity.this, "Sign in successfull", Toast.LENGTH_SHORT).show();
-                        Intent intent  = new Intent(getApplicationContext(), HomeActivity.class);
-                        startActivity(intent);
-                    }else{
-                        Toast.makeText(LoginActivity.this, "Invalid Credentials", Toast.LENGTH_SHORT).show();
-                    }
-                }
+                System.out.println("hello");
+                Intent intent=new Intent(getApplicationContext(),LoginActivity.class);
+                startActivity(intent);
             }
         });
+
     }
+
 }
