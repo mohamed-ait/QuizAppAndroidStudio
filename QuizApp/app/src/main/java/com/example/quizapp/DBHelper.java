@@ -17,7 +17,9 @@ public class DBHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase myDB) {
+        //create table users :
     myDB.execSQL("create Table users(username TEXT primary key, password TEXT,type TEXT)");
+
     }
 
     @Override
