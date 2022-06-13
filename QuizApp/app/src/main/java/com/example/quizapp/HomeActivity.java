@@ -1,5 +1,7 @@
 package com.example.quizapp;
 
+import static com.example.quizapp.ModulsActivity.questions;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.PersistableBundle;
@@ -10,6 +12,8 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
+
+import java.util.ArrayList;
 
 public class HomeActivity extends AppCompatActivity {
     CardView btnQuiz;
